@@ -1,0 +1,14 @@
+export STOW_DIR=~/projects/dotfiles
+
+alias ls='ls -G'
+
+# convenience for manipulating dotfiles
+alias stow-test='stow -nv --dotfiles -t ~ .'
+alias stow-it='stow -v --dotfiles -t ~ .'
+
+### HOMEBREW
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Brew bundle management
+export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
+alias brewdle='brew bundle'

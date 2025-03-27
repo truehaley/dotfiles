@@ -1,0 +1,39 @@
+##################
+# Standard Brews
+##################
+
+brew "argp-standalone"
+brew "helix"
+brew "lazygit"
+brew "mas"
+brew "premake"
+brew "stow"
+
+##################
+# Casks (Mac OS applications)
+##################
+
+cask "1password"
+cask "appzapper"
+cask "craft"
+cask "crossover"
+cask "daisydisk"
+cask "discord"
+cask "dropbox"
+cask "font-fira-code-nerd-font"
+cask "ghostty"
+cask "istat-menus"
+cask "karabiner-elements"
+cask "lm-studio"
+cask "logi-options+"
+cask "steam"
+cask "tailscale"
+cask "vivaldi"
+cask "zed"
+
+##################
+# Mac App Store installations
+##################
+
+mas "1Password for Safari", id: 1569813296
+mas "Bear", id: 1091189122
