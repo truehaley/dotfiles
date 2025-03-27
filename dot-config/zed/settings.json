@@ -1,0 +1,58 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "Fira Code",
+
+  // Whether to show tabs and spaces in the editor.
+  // This setting can take three values:
+  //
+  // 1. Draw tabs and spaces only for the selected text (default):
+  //    "selection"
+  // 2. Do not draw any tabs or spaces:
+  //   "none"
+  // 3. Draw all invisible symbols:
+  //   "all"
+  "show_whitespaces": "all",
+
+  // Whether to start a new line with a comment when a previous line is a comment as well.
+  "extend_comment_on_newline": false,
+
+  // Whether or not to perform a buffer format before saving
+  "format_on_save": "off",
+
+  // How to soft-wrap long lines of text. This setting can take
+  // three values:
+  //
+  // 1. Do not soft wrap.
+  //      "soft_wrap": "none",
+  // 2. Soft wrap lines that overflow the editor:
+  //      "soft_wrap": "editor_width",
+  // 3. Soft wrap lines at the preferred line length
+  //      "soft_wrap": "preferred_line_length",
+  "soft_wrap": "editor_width",
+  // The column at which to soft-wrap lines, for buffers where soft-wrap
+  // is enabled.
+  "preferred_line_length": 80,
+  // Whether to indent lines using tab characters, as opposed to multiple
+  // spaces.
+  "hard_tabs": false,
+  // How many columns a tab should occupy.
+  "tab_size": 4
+}
