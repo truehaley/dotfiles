@@ -1,5 +1,5 @@
 # dotfiles
-Personal configuration dot files
+Personal configuration dot files, primarily for macos
 
 Install stow with:
 
