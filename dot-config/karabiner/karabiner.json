@@ -4,7 +4,23 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Caps Lock → Control | Escape if alone | Use fn + caps lock to enable caps lock",
+                        "description": "Control → Control | Escape if alone",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "left_control" },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps Lock → Control | Escape if alone",
                         "manipulators": [
                             {
                                 "from": { "key_code": "caps_lock" },
