@@ -1,14 +1,27 @@
-export STOW_DIR=~/projects/dotfiles
-
+#########################
+# General system config
+#########################
+# colors for ls
 alias ls='ls -G'
 
-# convenience for manipulating dotfiles
+#########################
+# Stow configuration for managing dotfiles
+#########################
+# where is our repo of dotfiles?
+export STOW_DIR=~/projects/dotfiles
+# convenience for linking new dotfiles
 alias stow-test='stow -nv --dotfiles -t ~ .'
-alias stow-it='stow -v --dotfiles -t ~ .'
+alias stow-now='stow -v --dotfiles -t ~ .'
 
-### HOMEBREW
+#########################
+# Homebrew config
+#########################
+# Environment, path, etc
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Brew bundle management
+# Convenience for declarative bundle management
 export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
+alias brew-up='brew update'
 alias brewdle='brew bundle'
+alias brewdle-ug='brew bundle upgrade'
+alias brewdle-now='brew bundle install --no-upgrade --cleanup --zap'
+alias brewdle-clean='brew bundle cleanup --zap --force'

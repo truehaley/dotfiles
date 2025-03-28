@@ -7,8 +7,8 @@ Install stow with:
 
 Use stow to setup all the necessary symbolic links to the dotfiles here:
 
-`stow --dotfiles -vt ~ .`
+`> stow -v --dotfiles -t ~ .`
 
 To see what actions stow would perform without actually doing them:
 
-`stow --dotfiles -nvt ~ .`
+`> stow -nv --dotfiles -t ~ .`
