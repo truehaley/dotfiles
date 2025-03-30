@@ -3,11 +3,14 @@
 ##################
 
 brew "argp-standalone"
+brew "fzf"
 brew "helix"
 brew "lazygit"
+brew "oh-my-posh"
 brew "mas"
 brew "premake"
 brew "stow"
+brew "zinit"
 
 ##################
 # Casks (Mac OS applications)

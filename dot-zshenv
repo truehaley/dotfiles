@@ -1,0 +1,6 @@
+# .zshenv is loaded for ALL shells, regardless of interactivity or login status
+# Any common shell environment settings should be configured here
+# This is the only place where automated / system shell scripts can get settings
+# https://mac.install.guide/terminal/zshrc-zprofile
+
+# This one tends to be rarely used

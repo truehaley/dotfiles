@@ -1,0 +1,143 @@
+# .zshrc is loaded for all interactive shells, regardless of login status
+# All prompt-related settings should be configured here
+# https://mac.install.guide/terminal/zshrc-zprofile
+
+# Generally aliases, functions, prompts, etc should all be configured here.
+
+# Some tips on this configuration have come from here: https://www.youtube.com/watch?v=ud7YxC33Z3w
+
+#########################
+# Zinit plugin management
+#########################
+# https://zdharma-continuum.github.io/zinit/wiki/INTRODUCTION/
+# https://github.com/zdharma-continuum/zinit
+source $HOMEBREW_PREFIX/opt/zinit/zinit.zsh
+
+#########################
+# Oh-My-Posh Custom prompt
+#########################
+# https://ohmyposh.dev/docs
+# The standard terminal has issues displaying the ANSI characters correctly,
+#   so no fancy prompts when we're using it.
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/haley.toml)"
+fi
+
+#########################
+# General system config
+#########################
+# colors for ls
+alias ls='ls -G'
+
+#########################
+# Stow configuration for managing dotfiles
+#########################
+# where is our repo of dotfiles?
+export STOW_DIR=~/projects/dotfiles
+# convenience for linking new dotfiles
+alias stow-test='stow -nv --dotfiles -t ~ .'
+alias stow-now='stow -v --dotfiles -t ~ .'
+
+#########################
+# Homebrew config
+#########################
+# Convenience for declarative bundle management
+export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
+alias brew-up='brew update'
+alias brewdle='brew bundle'
+alias brewdle-ug='brew bundle upgrade'
+alias brewdle-install='brew bundle install --no-upgrade'
+alias brewdle-clean='brew bundle cleanup --zap --force'
+
+
+#########################
+# zsh completions
+#########################
+# https://github.com/zsh-users/zsh-completions
+# https://thevaluable.dev/zsh-completion-guide-examples/
+zinit light zsh-users/zsh-completions
+# initalize completions (should happen after all completions have been added)
+autoload -U compinit && compinit
+
+####
+# completion styling
+####
+# ignore case for completions
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# add color
+# default macos LSCOLORS='exfxcxdxbxegedabagacadah'
+# converted to LS_COLORS (see https://geoff.greer.fm/lscolors/  and https://gist.github.com/thomd/7667642)
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# Give a header for each type of completion
+# using '%F{green}-- %d --%f' for colors here causes fzf to break
+zstyle ':completion:*:*:*:*:descriptions' format '[ %d ]'
+# And group like types together
+zstyle ':completion:*' group-name ''
+
+
+####
+# Keybindings for completetions
+####
+# (Figure out unknown keycodes by running 'cat' with no arguments, then typing the key combo)
+# bind ctrl-enter to execute
+bindkey '^[[27;5;13~' autosuggest-execute
+# bind escape to clear
+bindkey '\e' autosuggest-clear
+# bind tab to accept current suggestion
+# nevermind... sticking with default to accept next piece of suggestion bindkey '\t' autosuggest-accept
+# bind ctrl-p and ctrl-n to search within history using what has been typed so far
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+####
+# History settings for completions
+####
+# default HISTFILE, HISTSIZE, SAVEHIST is in /etc/zshrc
+# erase any duplicates in the history
+HISTDUP=erase
+# add to existing history rather than erasing
+setopt appendhistory
+# share history between open terminals
+setopt sharehistory
+# dont save any commands that start with a space to history (for anything sensitive)
+setopt hist_ignore_space
+# muliple additional options to avoid duplications in History
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+####
+# fzf menu integration
+####
+# https://github.com/Aloxaf/fzf-tab
+# Execute after completions, but before plugins that wrap widgets
+#    (like autosuggestions and syntax highlighting)
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+# integration with zsh completions
+zinit light Aloxaf/fzf-tab
+# disable the standard completion menu so fzf rules
+zstyle ':completion:*' menu no
+# add a preview when using fzf on cd autocompletion
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -G $realpath'
+# keys to switch between groups
+zstyle ':fzf-tab:*' switch-group '<' '>'
+# increase the min height for better previews
+zstyle ':fzf-tab:*' fzf-min-height 8
+
+
+#########################
+# zsh autosuggestions
+#########################
+# https://github.com/zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-autosuggestions
+
+
+#########################
+# Syntax Highlighting
+#########################
+# Should be the last plugin, and generally last thing in the file
+# https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file
+zinit light zsh-users/zsh-syntax-highlighting

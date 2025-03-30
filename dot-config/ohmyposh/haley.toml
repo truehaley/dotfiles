@@ -1,0 +1,87 @@
+# Custom zsh prompt configuration
+# Lots of hints taken from https://www.youtube.com/watch?v=9U8LCjuQzdc
+# and further customized based on docs: https://ohmyposh.dev/docs
+
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+final_space = true
+version = 3
+
+
+[[blocks]]
+    type = 'prompt'
+    alignment = 'left'
+    newline = true
+
+    [[blocks.segments]]
+        type = 'session'
+        style = 'plain'
+        foreground = 'magenta'
+        template = '{{ .UserName }}󰁥{{ .HostName }}'
+
+
+[[blocks]]
+    type = 'prompt'
+    alignment = 'left'
+    newline = true
+
+    [[blocks.segments]]
+        type = 'path'
+        style = 'plain'
+        foreground = 'cyan'
+        #leading_diamond = '■'
+        #trailing_diamond = '■'
+        # Specify template to prevent the initial space character
+        template = '{{ .Path }}'
+        [blocks.segments.properties]
+            style = "full"
+            [blocks.segments.properties.mapped_locations]
+            "~/projects/*" = "~/"
+
+    [[blocks.segments]]
+        type = 'git'
+        style = 'plain'
+        foreground = 'darkGray'
+        template = '   {{ .HEAD }} {{ if gt .Behind 0 }}{{ end }}{{ if gt .Ahead 0 }}{{ end }}'
+        [blocks.segments.properties]
+            branch_icon = ' '
+            fetch_status = true
+
+
+
+[[blocks]]
+    type = 'prompt'
+    alignment = 'right'
+    overflow = 'hide'
+
+    [[blocks.segments]]
+        type = 'executiontime'
+        style = 'plain'
+        foreground = 'yellow'
+        template = '{{ .FormattedMs }}'
+        [blocks.segments.properties]
+            always_enabled = true
+            style = 'austin'
+
+    [[blocks.segments]]
+        type = 'status'
+        style = 'plain'
+        foreground_templates = [
+              "{{if ne .Code 0 }}red{{end}}",
+              "{{if eq .Code 0 }}green{{end}}",
+            ]
+        [blocks.segments.properties]
+            always_enabled = true
+            status_template = '{{ if ne .Code 0 }}{{ reason .Code }}({{ .Code }}){{ else }}OK{{ end }}'
+            status_separator = ' | '
+
+[[blocks]]
+    type = 'prompt'
+    alignment = 'left'
+    newline = true
+
+    [[blocks.segments]]
+        type = 'text'
+        style = 'plain'
+        background = 'transparent'
+        foreground = 'lightMagenta'
+        template = '❯'
