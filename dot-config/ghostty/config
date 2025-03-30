@@ -4,7 +4,5 @@ font-size = 15
 # I like both glass and retro icons
 macos-icon = retro
 
-keybind = ctrl+b=scroll_page_up
-keybind = ctrl+v=scroll_page_down
-keybind = page_up=scroll_page_up
-keybind = page_down=scroll_page_down
+#keybind = page_up=scroll_page_up
+#keybind = page_down=scroll_page_down
