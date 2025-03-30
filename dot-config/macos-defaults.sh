@@ -63,9 +63,11 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # Gestures
 #########################
 # Enable App Expose gesture (three fingers down)
-defaults write com.apple.dock showAppExposeGestureEnabled -bool false
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+# When using mission control expose, group apps together
+defaults write com.apple.dock expose-group-apps -bool true
 
 #########################
 # Finder
