@@ -1,5 +1,5 @@
 ##################
-# Standard Brews
+# Standard Brews & Taps
 ##################
 
 brew "argp-standalone"
@@ -12,12 +12,16 @@ brew "premake"
 brew "stow"
 brew "zinit"
 
+tap "dart-lang/dart"
+brew "dart"
+
 ##################
 # Casks (Mac OS applications)
 ##################
 
 cask "1password"
 cask "appzapper"
+cask "betterdisplay"
 cask "craft"
 cask "crossover"
 cask "daisydisk"
