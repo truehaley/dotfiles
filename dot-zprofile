@@ -12,4 +12,6 @@
 # Environment, path, etc
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+export PATH=~/bin:$PATH
+
 export EDITOR=nano
