@@ -45,9 +45,9 @@ alias stow-now='stow -v --dotfiles -t ~ .'
 export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
 alias brew-up='brew update'
 alias brewdle='brew bundle'
-alias brewdle-ug='brew bundle upgrade'
-alias brewdle-install='brew bundle install --no-upgrade'
-alias brewdle-clean='brew bundle cleanup --zap --force'
+alias brewdle-ug='brew bundle upgrade -v'
+alias brewdle-install='brew bundle install --no-upgrade -v'
+alias brewdle-clean='brew bundle cleanup --zap --force -v'
 
 
 #########################
