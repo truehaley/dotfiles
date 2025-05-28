@@ -6,6 +6,7 @@ brew "argp-standalone"
 brew "fzf"
 brew "helix"
 brew "lazygit"
+brew "lua"
 brew "oh-my-posh"
 brew "mas"
 brew "premake"
@@ -33,6 +34,7 @@ cask "istat-menus"
 cask "karabiner-elements"
 cask "lm-studio"
 cask "logi-options+"
+cask "orcaslicer"
 cask "steam"
 cask "tailscale"
 cask "vivaldi"
@@ -44,3 +46,4 @@ cask "zed"
 
 mas "1Password for Safari", id: 1569813296
 mas "Bear", id: 1091189122
+mas "Shapr3d", id: 1091675654

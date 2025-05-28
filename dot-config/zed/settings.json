@@ -7,9 +7,6 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "outline_panel": {
-    "dock": "right"
-  },
   "telemetry": {
     "metrics": false,
     "diagnostics": false
@@ -23,6 +20,12 @@
   "buffer_font_size": 16,
   "buffer_font_family": "FiraCode Nerd Font",
 
+  "outline_panel": {
+    "dock": "right"
+  },
+  "minimap": {
+      "show": "always"
+  },
   // Whether to show tabs and spaces in the editor.
   // This setting can take three values:
   //
@@ -52,10 +55,19 @@
   "soft_wrap": "editor_width",
   // The column at which to soft-wrap lines, for buffers where soft-wrap
   // is enabled.
-  "preferred_line_length": 80,
+  "preferred_line_length": 100,
   // Whether to indent lines using tab characters, as opposed to multiple
   // spaces.
   "hard_tabs": false,
   // How many columns a tab should occupy.
-  "tab_size": 4
+  "tab_size": 4,
+
+    "lsp": {
+    "clangd": {
+        "binary": {
+        "arguments": ["--header-insertion=never"]
+        }
+    }
+    }
+
 }
