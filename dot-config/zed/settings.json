@@ -63,11 +63,19 @@
   "tab_size": 4,
 
     "lsp": {
-    "clangd": {
-        "binary": {
-        "arguments": ["--header-insertion=never"]
+        "clangd": {
+            "binary": {
+                "arguments": [
+                    "--header-insertion=never",
+                    "--query-driver=/opt/homebrew/bin/arm-none-eabi-g*"
+                ]
+            }
+        }
+    },
+
+    "languages": {
+        "Make": {
+            "hard_tabs": true
         }
     }
-    }
-
 }
