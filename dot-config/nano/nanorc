@@ -1,0 +1,21 @@
+# include default syntax highlighting
+include "/opt/homebrew/Cellar/nano/*/share/nano/*.nanorc"
+
+# docs
+# https://www.nano-editor.org/dist/latest/nanorc.5.html
+
+set mouse
+set tabsize 4
+set tabstospaces
+set positionlog     # Keep track of last position in recent files
+set autoindent
+set linenumbers
+
+set minibar         # Place file info at bottom
+set constantshow    # Always shows cursor position
+
+set numbercolor grey,normal     # line numbers
+set titlecolor white,grey   # also used as minicolor and promptcolor when not separately specified
+set keycolor bold,grey,normal   # The keys in the help rows
+set functioncolor grey,normal   # The descriptions in the help rows
+set statuscolor white,grey      # status messages

@@ -5,16 +5,19 @@
 brew "argp-standalone"
 brew "fzf"
 brew "helix"
+brew "jj"
 brew "lazygit"
 brew "lua"
-brew "oh-my-posh"
 brew "mas"
+brew "nano"
+brew "oh-my-posh"
 brew "premake"
+brew "python3"
 brew "stow"
 brew "zinit"
 
-tap "dart-lang/dart"
-brew "dart"
+# tap "dart-lang/dart"
+# brew "dart"
 
 ##################
 # Casks (Mac OS applications)

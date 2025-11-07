@@ -58,6 +58,8 @@ alias brewdle-clean='brew bundle cleanup --zap --force -v'
 zinit light zsh-users/zsh-completions
 # initalize completions (should happen after all completions have been added)
 autoload -U compinit && compinit
+# JJ dynamic completions
+source <(COMPLETE=zsh jj)
 
 ####
 # completion styling
