@@ -12,6 +12,7 @@
 # Environment, path, etc
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export PATH=~/bin:$PATH
+# FYI: .local/bin is used by pipx
+export PATH=/Users/haley/bin:/Users/haley/.local/bin:$PATH
 
 export EDITOR=nano

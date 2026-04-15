@@ -15,6 +15,8 @@ brew "premake"
 brew "python3"
 brew "stow"
 brew "zinit"
+brew "cmake"
+brew "pipx"
 
 # tap "dart-lang/dart"
 # brew "dart"

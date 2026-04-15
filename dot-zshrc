@@ -60,6 +60,8 @@ zinit light zsh-users/zsh-completions
 autoload -U compinit && compinit
 # JJ dynamic completions
 source <(COMPLETE=zsh jj)
+# pipx says to run after autoload
+eval "$(register-python-argcomplete pipx)"
 
 ####
 # completion styling
