@@ -4,3 +4,4 @@
 # https://mac.install.guide/terminal/zshrc-zprofile
 
 # This one tends to be rarely used
+. "$HOME/.cargo/env"

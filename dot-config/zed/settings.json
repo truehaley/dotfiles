@@ -7,6 +7,8 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
   "telemetry": {
     "metrics": false,
     "diagnostics": false
