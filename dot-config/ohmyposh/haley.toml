@@ -18,6 +18,18 @@ version = 3
         foreground = 'magenta'
         template = '{{ .UserName }}󰁥{{ .HostName }}'
 
+[[blocks]]
+    type = 'prompt'
+    alignment = 'right'
+    overflow = 'hide'
+
+    [[blocks.segments]]
+        type = 'time'
+        style = 'plain'
+        foreground = 'magenta'
+
+        [blocks.segments.options]
+        time_format = "2006-01-02 Mon 15:04:05"
 
 [[blocks]]
     type = 'prompt'
@@ -36,6 +48,7 @@ version = 3
             style = "full"
             [blocks.segments.properties.mapped_locations]
             "~/projects/*" = "~/"
+            "~/Downloads/*" = "~/󰁆"
 
     [[blocks.segments]]
         type = 'git'
